@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Dimensions, StyleSheet, View } from 'react-native';
-import { ColorWheel } from 'react-native-color-wheel';
+import { ColorWheel } from '../libs/colorWheel/ColorWheel'
 
  export const ColorPicker = ({color, opacity, onChange}) => (
   <View style={[{flex: 1, alignSelf:'center'}]}>

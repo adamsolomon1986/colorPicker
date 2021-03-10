@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Dimensions, StyleSheet, View,Text } from 'react-native';
-import { ColorWheel } from 'react-native-color-wheel';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 
 const defaultColors = ['blue','green', 'orange', 'purple', 'black']
