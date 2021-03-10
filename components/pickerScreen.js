@@ -1,6 +1,6 @@
 import React from'react'
 import { ColorPicker } from './colorpicker'
-import {Alert, SafeAreaView, View} from 'react-native'
+import {Alert, SafeAreaView, View, Text} from 'react-native'
 import { Header } from './header'
 import { ColorArch } from './colorArch'
 import {ColorSlider} from './slider'
@@ -10,24 +10,22 @@ import { connect } from 'react-redux';
 
 class PickerScreen extends React.Component {
 
-    state = {color: '#e8e8e8', opacity:1}
-
     onColorChange = (color)=>{
-        this.setState({color:color})
+        this.props.changeColor(color)
     }
 
     onOpacityChanged = (opacity) => {
-        this.setState({opacity:opacity})
+        this.props.changeOpacity(opacity)
     }
 
     render(){
         return(
             <SafeAreaView>
             <View>
-                <Header color={this.state.color}/>
-               <ColorPicker color={this.state.color} opacity={this.state.opacity} onChange={this.onColorChange}/>
-               <ColorSlider color={this.state.color} opacity={this.state.opacity} onChange={this.onOpacityChanged}/>
-               <ColorArch color={this.state.color} onChange={this.onColorChange}/>
+                <Header color={this.props.color}/>
+               <ColorPicker color={this.props.color} opacity={this.props.opacity} onChange={this.onColorChange}/>
+               <ColorSlider color={this.props.color} opacity={this.props.opacity} onChange={this.onOpacityChanged}/>
+               <ColorArch color={this.props.color} onChange={this.onColorChange}/>
             </View>
             </SafeAreaView>
         )
@@ -45,9 +43,9 @@ const mapStateToProps = state => ({
     changeOpacity,
   };
   
-  const AppContainer = connect(
+  const PickerScreenComp = connect(
     mapStateToProps,
     mapDispatchToProps
   )(PickerScreen);
   
-  export default PickerScreen;
+  export default PickerScreenComp;

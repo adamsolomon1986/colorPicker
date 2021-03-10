@@ -5,12 +5,13 @@ import PickerScreen from './components/pickerScreen';
 
 import { Provider } from 'react-redux';
 import { store } from './redux';
+import PickerScreenComp from './components/pickerScreen';
 
 export default function App() {
   return (
     <Provider store={store}>
     <View style={styles.container}>
-      <PickerScreen/>
+      <PickerScreenComp/>
     </View>
     </Provider>
   );
