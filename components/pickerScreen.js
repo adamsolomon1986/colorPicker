@@ -4,8 +4,11 @@ import {Alert, SafeAreaView, View} from 'react-native'
 import { Header } from './header'
 import { ColorArch } from './colorArch'
 import {ColorSlider} from './slider'
+import {changeColor, changeOpacity} from '../redux/index'
+import { connect } from 'react-redux';
 
-export default class PickerScreen extends React.Component {
+
+class PickerScreen extends React.Component {
 
     state = {color: '#e8e8e8', opacity:1}
 
@@ -31,3 +34,20 @@ export default class PickerScreen extends React.Component {
     }
 
 }
+
+const mapStateToProps = state => ({
+    color: state.color,
+    opacity:state.opacity
+  });
+  
+  const mapDispatchToProps = {
+    changeColor,
+    changeOpacity,
+  };
+  
+  const AppContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(PickerScreen);
+  
+  export default PickerScreen;

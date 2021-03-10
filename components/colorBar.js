@@ -9,7 +9,7 @@ const renderColor = ({item},onChange) => (
     
         <TouchableOpacity 
         onPress={()=>onChange(item)}
-        style={{height:40, width:40, borderRadius:20, backgroundColor:item}}>
+        style={[styles.colorItem, {backgroundColor:item}]}>
 
         </TouchableOpacity>
 
@@ -31,8 +31,9 @@ export const styles = StyleSheet.create({
         flex:1,
         height:60, width:Dimensions.get('window').width * .8,
         justifyContent:'space-evenly'
-       
-        //backgroundColor:'green'
+    },
+    colorItem:{
+        height:40, width:40, borderRadius:20,
     }
 
 })
