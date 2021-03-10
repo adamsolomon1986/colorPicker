@@ -7,7 +7,6 @@ import { ColorWheel } from '../libs/colorWheel/ColorWheel'
     
     <ColorWheel
       initialColor={color}
-      onColorChange={color => console.log({color})}
       onColorChangeComplete={color => onChange(color)}
       style={styles.wheel}
       thumbStyle={{ height: 30, width: 30, borderRadius: 30}}
